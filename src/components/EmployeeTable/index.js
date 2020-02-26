@@ -35,18 +35,19 @@ export default function EmployeeTable() {
     });
 
     return (
-        <MaterialTable className="tableCss"
+        <MaterialTable style={{ width: "70%" }}
             title="Click on column name to sort"
             columns={state.columns}
-            data={query =>
-                new Promise((resolve, reject) => {
-                    // prepare your data and then call resolve like this:
-                    resolve({
-                        data: employees,
-                        page: 2,
-                        totalCount: 15,
-                    });
-                })
+            data={
+                query =>
+                    new Promise((resolve, reject) => {
+                        // prepare your data and then call resolve like this:
+                        resolve({
+                            data: employees,
+                            page: 2,
+                            totalCount: 15,
+                        });
+                    })
             }
 
         />
