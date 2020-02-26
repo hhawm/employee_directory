@@ -8,20 +8,19 @@ import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Navbar />
-        <Wrapper>
-          <Route exact path="/" component={About} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/discover" component={Discover} />
-          <Route exact path="/search" component={Search} />
-        </Wrapper>
-        <Footer />
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <Navbar />
+                <Wrapper>
+                    <Route exact path="/employee_directory" component={About} />
+                    <Route exact path="/discover" component={Discover} />
+                    <Route exact path="/search" component={Search} />
+                </Wrapper>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
