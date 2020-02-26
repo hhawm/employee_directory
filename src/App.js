@@ -1,26 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Discover from "./pages/Discover";
-import About from "./pages/About";
-import Search from "./pages/Search";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import React, { Component } from "react";
+// import EmployeeCard from "./components/EmployeeCard";
+import EmployeeTable from "./components/EmployeeTable";
 import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
+import employees from "./utils/employees.json";
 
-function App() {
-    return (
-        <Router>
-            <div>
-                <Navbar />
-                <Wrapper>
-                    <Route exact path="/employee_directory" component={About} />
-                    <Route exact path="/discover" component={Discover} />
-                    <Route exact path="/search" component={Search} />
-                </Wrapper>
-                <Footer />
-            </div>
-        </Router>
-    );
+class App extends Component {
+    // Setting this.state.employees to the employees json array
+    state = {
+        employees
+    };
+
+    // Map over this.state.employees and render a employeeCard component for each employee object
+    render() {
+        return (
+            <Wrapper>
+                <Title>React Employee Directory List</Title>
+                <EmployeeTable />
+            </Wrapper>
+        );
+    }
 }
 
 export default App;
